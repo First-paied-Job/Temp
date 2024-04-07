@@ -1,0 +1,20 @@
+﻿﻿@using Clinic.Web.ViewModels.Administration.Dashboard;
+
+@model ICollection<DoctorViewModel>
+
+<main class="mt-3">
+    <h1 class="text-center suls-text-color">Current doctors</h1>
+    @foreach (DoctorViewModel doctor in Model)
+    {
+        <div>
+            <p>@doctor.Email</p>
+            <div class="submit-button ">
+                <a href="/Administration/Dashboard/RemoveDoctor?userId=@doctor.DoctorId">
+                    <button class="btn btn-common" id="submit" type="submit">Remove Doctor's role</button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                    <div class="clearfix"></div>
+                </a>
+            </div>
+        </div>
+    }
+</main>
