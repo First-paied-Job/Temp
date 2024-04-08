@@ -112,7 +112,10 @@
                 throw new InvalidOperationException($"There is no role with the name \"{GlobalConstants.ClinicDoctortRoleName}\"!");
             }
 
-            await this.RemoveDoctorFromClinic(userId);
+            if (user.ClinicId != null)
+            {
+                await this.RemoveDoctorFromClinic(userId);
+            }
 
             // Removing relations from many to many table UserRoles
             this.db.UserRoles.Remove(new Microsoft.AspNetCore.Identity.IdentityUserRole<string>()

@@ -87,7 +87,6 @@
                 .Entity<Hospital>()
                 .HasMany(c => c.Clincs)
                 .WithOne(c => c.HospitalEmployer)
-                .HasForeignKey(c => c.HospitalEmployerId)
                 .OnDelete(DeleteBehavior.ClientCascade);
 
             builder

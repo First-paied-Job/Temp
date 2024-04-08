@@ -25,6 +25,6 @@
 
         public virtual Hospital HospitalEmployer { get; set; }
 
-        public string HospitalEmployerId { get; set; }
+        public string? HospitalEmployerId { get; set; }
     }
 }
